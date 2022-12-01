@@ -119,6 +119,8 @@ def download_thing(id:)
   thing
 end
 
+# TODO: @jbodah 2022-12-01: should probably just save entire result so I can filter them locally
+# TODO: @jbodah 2022-12-01: is expansion? reimplements?
 def download_things(ids:)
   out = curl "#{BASE}/xmlapi2/thing?id=#{ids.join(',')}"
   bulk = Nokogiri::HTML(out)
