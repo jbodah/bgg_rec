@@ -58,7 +58,7 @@ def download_plays(username:, since:)
     plays.each do |play|
       item = play.find("item")
       players = play.find("players").select("player")
-      my_play = players.find { |p| p["username"] == "hiimjosh" }
+      my_play = players.find { |p| p["username"] == username }
       id = item["objectid"]
       items_by_id[id] ||=  {plays: 0, new: 0, id: id, name: item["name"]}
       items_by_id[id][:plays] += 1
